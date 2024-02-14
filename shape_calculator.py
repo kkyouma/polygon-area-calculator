@@ -27,6 +27,14 @@ class Rectangle:
                 picture += f"{'*' * self._width}" + "\n"
             return picture
 
+    def __str__(self):
+        return f"Rectangle(width={self._width}, height={self._height})"
 
-class Square:
-    pass
+
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)
+
+    def set_side(self, side):
+        self._width = side
+        self._height = side
