@@ -27,6 +27,9 @@ class Rectangle:
                 picture += f"{'*' * self._width}" + "\n"
             return picture
 
+    def get_amount_inside(self, shape):
+        return self.get_area() // shape.get_area()
+
     def __str__(self):
         return f"Rectangle(width={self._width}, height={self._height})"
 
@@ -38,3 +41,6 @@ class Square(Rectangle):
     def set_side(self, side):
         self._width = side
         self._height = side
+
+    def __str__(self):
+        return f"Square(side={self._width})"
